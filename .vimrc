@@ -38,6 +38,7 @@ if dein#load_state('/Users/sebin/.local/share/dein')
   call dein#add('Shougo/neosnippet-snippets')
   call dein#add('Shougo/neosnippet.vim')
   call dein#add('Shougo/vimshell')
+  call dein#add('sheerun/vim-polyglot')
   call dein#add('Shougo/vimproc.vim', {'build' : 'make'})
   call dein#add('Xuyuanp/nerdtree-git-plugin')
   call dein#add('easymotion/vim-easymotion')
@@ -105,9 +106,11 @@ let mapleader = "\<space>"
 
 " NERDTree toggle
 nmap <leader>nt = :NERDTreeToggle<cr>
+
 " Open NerdTree if no file is specifed to vim
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
 " Close NERDTree when it is the last window
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
 
@@ -134,9 +137,17 @@ call NERDTreeHighlightFile('go'     , 'Magenta' , 'none' , '#ff00ff' , '#151515'
 au BufRead,BufNewFile *.go set filetype=go
 let g:indentLine_char = 'c'
 let g:indentLine_setColors = 0
+
 highlight Cursor guifg=white guibg=black
 highlight iCursor guifg=white guibg=steelblue
+
 set guicursor=n-v-c:block-Cursor
 set guicursor+=i:ver100-iCursor
 set guicursor+=n-v-c:blinkon0
 set guicursor+=i:blinkwait10
+
+"" Switching windows
+noremap <C-j> <C-w>j
+noremap <C-k> <C-w>k
+noremap <C-l> <C-w>l
+noremap <C-h> <C-w>h
