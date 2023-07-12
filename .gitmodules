@@ -1,0 +1,9 @@
+[submodule "vim-plugin-surround"]
+	path = .vim/pack/my-plugins/start/surround
+	url = https://github.com/tpope/vim-surround.git
+[submodule "vim-plugin-commentary"]
+	path = .vim/pack/my-plugins/start/commentary
+	url = https://github.com/tpope/vim-commentary.git
+[submodule "vim-plugin-tabular"]
+	path = .vim/pack/my-plugins/start/tabular
+	url = https://github.com/godlygeek/tabular.git
